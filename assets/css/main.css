@@ -2565,6 +2565,38 @@ section,
   font-family: inherit;
 }
 
+
+.contact .contact-form-card .php-email-form .form-control-anon {
+  height: 52px;
+  padding: 16px 20px;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background-color: color-mix(in srgb, var(--surface-color), var(--background-color) 30%);
+  color: var(--default-color);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.contact .contact-form-card .php-email-form .form-control-anon:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--surface-color);
+  outline: none;
+}
+
+.contact .contact-form-card .php-email-form .form-control-anon::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-weight: 400;
+}
+
+.contact .contact-form-card .php-email-form textarea.form-control-anon {
+  height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+
 .contact .contact-form-card .php-email-form .submit-btn {
   width: 100%;
   background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6366f1 30%));
