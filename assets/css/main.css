@@ -548,9 +548,6 @@ h6 {
   padding-bottom: 12px;
 }
 
-.footer .footer-links {
-  margin-bottom: 30px;
-}
 
 .footer .footer-links ul {
   list-style: none;
@@ -2701,8 +2698,8 @@ section,
   background: var(--accent-color);
 }
 
-.contact .contact-info-area .method-card:hover .card-icon i {
-  color: var(--contrast-color);
+.contact .contact-info-area .method-card:hover .card-icon i, a {
+  color: white;
 }
 
 .contact .contact-info-area .method-card .card-icon {
@@ -2717,9 +2714,9 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact .contact-info-area .method-card .card-icon i {
+.contact .contact-info-area .method-card .card-icon i, a {
   font-size: 20px;
-  color: var(--accent-color);
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
 }
 
@@ -2783,10 +2780,11 @@ section,
   color: var(--heading-color);
 }
 
-.contact .contact-info-area .additional-info .social-connect .social-links {
+
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 2px;
 }
 
 .contact .contact-info-area .additional-info .social-connect .social-links .social-link {
