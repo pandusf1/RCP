@@ -667,30 +667,30 @@ Hal inilah yang mendasari kami untuk membuat kegiatan-kegiatan positif dengan ha
                 <p>Kadang kita hanya butuh tempat untuk didengar. Silakan bersuara di sini, entah itu unek-unek, perasaan, atau sekadar cerita.</p>
               </div>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                  <div class="mb-3">
-                    <input type="text" name="name" class="form-control-anon" placeholder="Anonymous" disabled>
-                  </div>
+<form action="/submit" method="POST" class="php-email-form">
+  <div class="mb-3">
+    <input type="text" name="name" class="form-control-anon" value="Anonymous" readonly>
+  </div>
 
-                <div class="mb-3">
-                  <input type="text" class="form-control" name="subject" placeholder="What's this about?" required="">
-                </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" name="subject" placeholder="What's this about?" required>
+  </div>
 
-                <div class="mb-4">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Tell us more about your project..." required=""></textarea>
-                </div>
+  <div class="mb-4">
+    <textarea class="form-control" name="message" rows="4" placeholder="Tell us more about your project..." required></textarea>
+  </div>
 
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
+  <div class="my-3">
+    <div class="loading">Loading</div>
+    <div class="error-message"></div>
+    <div class="sent-message">Your message has been sent. Thank you!</div>
+  </div>
 
-                <button type="submit" class="submit-btn">
-                  <span>Send Message</span>
-                  <i class="bi bi-send-fill"></i>
-                </button>
-              </form>
+  <button type="submit" class="submit-btn">
+    <span>Send Message</span>
+    <i class="bi bi-send-fill"></i>
+  </button>
+</form>
             </div>
           </div>
 
@@ -871,6 +871,12 @@ Hal inilah yang mendasari kami untuk membuat kegiatan-kegiatan positif dengan ha
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+   <script>
+    fetch("http://localhost:3000/api/data")
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+  </script>
 </body>
 
 </html>
