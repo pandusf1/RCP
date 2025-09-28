@@ -696,8 +696,7 @@ Hal inilah yang mendasari kami untuk membuat kegiatan-kegiatan positif dengan ha
                 <p>Kadang kita hanya butuh tempat untuk didengar. Silakan bersuara di sini, entah itu unek-unek, perasaan, atau sekadar cerita.</p>
               </div>
 
-<form name="kontak" method="POST" class="php-email-form" data-netlify="true">
-<input type="hidden" name="form-name" value="kontak">
+<form id="myForm" action="https://getform.io/f/amdyrvgb" method="POST" class="php-email-form" data-netlify="true">
   <div class="mb-3">
     <input type="text" name="name" class="form-control-anon" value="Anonymous" readonly>
   </div>
@@ -710,11 +709,6 @@ Hal inilah yang mendasari kami untuk membuat kegiatan-kegiatan positif dengan ha
     <textarea class="form-control" name="message" rows="4" placeholder="Tell us more about your project..." required></textarea>
   </div>
 
-  <div class="my-3">
-    <div class="loading">Loading</div>
-    <div class="error-message"></div>
-    <div class="sent-message">Your message has been sent. Thank you!</div>
-  </div>
 
   <button type="submit" class="submit-btn">
     <span>Send Message</span>
@@ -855,6 +849,47 @@ Hal inilah yang mendasari kami untuk membuat kegiatan-kegiatan positif dengan ha
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Tambahkan SweetAlert2 di <head> atau sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", async function(e) {
+  e.preventDefault(); // cegah reload halaman
+
+  const formData = new FormData(this);
+  const response = await fetch(this.action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
+
+  if (response.ok) {
+    // ✅ Notifikasi Toast sukses
+    Swal.fire({
+      toast: true,
+      position: "top-end",
+      icon: "success",
+      title: "Pesan berhasil dikirim!",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true
+    });
+    this.reset(); // kosongkan form setelah kirim
+  } else {
+    // ❌ Notifikasi Toast error
+    Swal.fire({
+      toast: true,
+      position: "top-end",
+      icon: "error",
+      title: "Terjadi kesalahan, coba lagi!",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true
+    });
+  }
+});
+</script>
 
 </body>
 
