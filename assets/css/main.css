@@ -792,7 +792,7 @@ section,
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: -20px;
 }
 
 .section-title p {
@@ -1730,7 +1730,7 @@ section,
 }
 
 .why-us .feature-content .feature-list .feature-item .feature-text p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: white;
   margin: 0;
   line-height: 1.5;
 }
@@ -1765,13 +1765,9 @@ section,
   background: transparent;
   color: var(--accent-color);
   border-color: var(--accent-color);
+  width: 100%;
 }
 
-.why-us .feature-content .cta-wrapper .btn.btn-outline:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transform: translateY(-2px);
-}
 
 @media (max-width: 991px) {
   .why-us .feature-content {
@@ -2262,6 +2258,7 @@ section,
   line-height: 1.5;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .team .team-carousel-wrapper .leadership-slider .leader-card .leader-info .leader-contact {
@@ -4185,6 +4182,3 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
